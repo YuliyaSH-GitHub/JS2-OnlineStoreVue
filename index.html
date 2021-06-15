@@ -15,8 +15,8 @@
 <body>
     <div id="app" class="onlineStoreContainer">
         <header class="b-OnlineStoreHeader b-OnlineStoreHeader_disposition">
-            <form action="#" class="searchForm">
-                <input type="text" class="searchField" />
+            <form action="#" class="searchForm" @submit.prevent="filterGoods()">
+                <input type="text" class="searchField" v-model="searchLine" />
                 <button class="btnSearch" type="submit">
                     <i class="fas fa-search iconBtnSearch"></i>
                 </button>
@@ -28,11 +28,48 @@
             b-OnlineStoreHeader__dropdownMenu
             b-OnlineStoreHeader__dropdownMenu_right
           ">
-                <p>чтобы было видно</p>
+                <table class="b-OnlineStoreHeader__table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Цена</th>
+                            <th scope="col">Количество</th>
+                            <th scope="col">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="product of basketItems" :key="product.id">
+                            <th scope="row">{{product.id}}</th>
+                            <td>{{product.title}}</td>
+                            <td>{{product.price}}</td>
+                            <td class="productCount">1</td>
+                            <td><i class="far fa-minus-square productRemoveBtn"></i><i
+                                    class="fas fa-trash-alt productRemoveGoods"></i></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2" scope="row">Итого:</th>
+                            <td colspan="3">
+                                <span class="total">0</span>
+                                <i class="fas fa-ruble-sign"></i>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
         </header>
         <main>
-            <div class="b-goodsList b-goodsList_grid"></div>
+            <div class="b-goodsList b-goodsList_grid">
+                <div class="b-goodsList__item" v-for="product of goods" :key="product.id">
+                    <img class="b-goodsList__img" :src="product.imageUrl" alt="goods" />
+                    <h3>{{product.title}}</h3>
+                    <p>{{product.price}} &#8381;</p>
+                    <button class="b-goodButton" @click="addProduct(product)">Купить</button>
+                </div>
+            </div>
         </main>
     </div>
 

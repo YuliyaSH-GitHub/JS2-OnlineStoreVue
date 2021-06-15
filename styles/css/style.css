@@ -90,6 +90,11 @@ button {
   left: auto;
 }
 
+.b-OnlineStoreHeader__table th,
+.b-OnlineStoreHeader__table td {
+  padding: 10px;
+}
+
 .b-goodsList_grid {
   margin-top: 20px;
   display: -ms-grid;

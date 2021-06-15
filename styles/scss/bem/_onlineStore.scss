@@ -28,12 +28,12 @@
     right: 0;
     left: auto;
   }
-  // &__table {
-  //   th,
-  //   td {
-  //     padding: 10px;
-  //   }
-  // }
+  &__table {
+    th,
+    td {
+      padding: 10px;
+    }
+  }
 }
 .b-goodsList {
   &_grid {
