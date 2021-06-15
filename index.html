@@ -44,16 +44,15 @@
                             <th scope="row">{{product.id}}</th>
                             <td>{{product.title}}</td>
                             <td>{{product.price}}</td>
-                            <td class="productCount">1</td>
-                            <td><i class="far fa-minus-square productRemoveBtn"></i><i
-                                    class="fas fa-trash-alt productRemoveGoods"></i></td>
+                            <td class="productCount">{{product.count}}</td>
+                            <td @click="removeProduct(product)"><i class="fas fa-trash-alt productRemoveGoods"></i></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <th colspan="2" scope="row">Итого:</th>
                             <td colspan="3">
-                                <span class="total">0</span>
+                                <span class="total">{{totalSum}}</span>
                                 <i class="fas fa-ruble-sign"></i>
                             </td>
                         </tr>
@@ -72,7 +71,6 @@
             </div>
         </main>
     </div>
-
     <script src="script/vue/vue.js"></script>
     <script src="script/app.js"></script>
 </body>
