@@ -5,7 +5,7 @@ const app = new Vue({
         goods: [],
         basketItems: [],
         isVisibleCart: false,
-        searchLine: '',
+        // searchLine: '',
         totalSum: null,
     },
     methods: {
@@ -24,8 +24,8 @@ const app = new Vue({
         /**
          * Метод производит фильтрацию товаров на странице по введенному в input наименованию
          */
-        filterGoods() {
-            const regexp = new RegExp(this.searchLine, 'i');
+        filterGoods(searchLine) {
+            const regexp = new RegExp(searchLine, 'i');
             this.goods = this.goods.filter(product => regexp.test(product.title));
         },
         /**

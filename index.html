@@ -11,15 +11,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/css/style.css" />
 </head>
+
 <body>
     <div id="app" class="onlineStoreContainer">
         <header class="b-OnlineStoreHeader b-OnlineStoreHeader_disposition">
-            <form action="#" class="searchForm" @submit.prevent="filterGoods()">
-                <input type="text" class="searchField" v-model="searchLine" />
-                <button class="btnSearch" type="submit">
-                    <i class="fas fa-search iconBtnSearch"></i>
-                </button>
-            </form>
+            <search></search>
             <button @click="isVisibleCart=!isVisibleCart" class="b-OnlineStoreHeader__basketButton">
                 Корзина
             </button>
@@ -33,6 +29,7 @@
     <script src="script/vue/vue.js"></script>
     <script src="script/GoodsComponent.js"></script>
     <script src="script/BasketComponent.js"></script>
+    <script src="script/FilterComponent.js"></script>
     <script src="script/app.js"></script>
 </body>
 
