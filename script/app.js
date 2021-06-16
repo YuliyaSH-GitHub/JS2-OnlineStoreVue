@@ -84,7 +84,7 @@ const app = new Vue({
                 for (let item of data) {
                     this.goods.push(item);
                 }
-                console.log(this.goods);
+                // console.log(this.goods);
             })
     }
 })
